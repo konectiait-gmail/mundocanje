@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="483903e9f99e44d3bb1fd40b5cbbdbc3" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Categorias" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Chats" Width="1.5" PointX="7.75" PointY="6" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Chats_Detalles" Width="1.5" PointX="10" PointY="6" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Despublicaciones_Tipos" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Notificaciones" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Pedidos" Width="1.5" PointX="7.5" PointY="1.75" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Pedidos_Estados" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Productos_Estados" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Productos_Tipos" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Terminos" Width="1.5" PointX="7.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Usuarios_Tipos" Width="1.5" PointX="0.75" PointY="2.375" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Chats_Detalles_Chat" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Pedidos_Estados" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Usuarios" Width="1.5" PointX="3" PointY="1.125" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Usuarios_Tipos" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Preguntas_Frecuentes" Width="1.5" PointX="10.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Planes" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Usuarios_Planes" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Localidades" Width="1.5" PointX="12.375" PointY="0.875" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Usuarios_Localidades" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Parametros" Width="1.5" PointX="12.375" PointY="3.75" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Pedidos_Usuarios" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Productos" Width="1.5" PointX="5.25" PointY="10.625" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Productos_Categorias" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Productos_Despublicaciones" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Pedidos_Productos" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Productos_Estados" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Productos_TipoProducto" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Productos_Usuarios" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Chats_UsuarioReceptor" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioEmisor" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioReceptor" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Chats_UsuarioEmisor" />
+        <EntityTypeShape EntityType="MundoCanjeDBModel.Paises" Width="1.5" PointX="10.125" PointY="13.375" />
+        <AssociationConnector Association="MundoCanjeDBModel.FK_Localidades_ToPais" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
