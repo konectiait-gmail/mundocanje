@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E236221-0DD8-4C40-AC59-C96956E54D59}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MundoCanjeWeb</RootNamespace>
+    <AssemblyName>MundoCanjeWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MundoCanjeDB.mdf" />
+    <Content Include="App_Data\MundoCanjeDB_log.ldf">
+      <DependentUpon>MundoCanjeDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Cpanel\assets\css\style.css" />
+    <Content Include="Cpanel\assets\images\dashboard\circle.png" />
+    <Content Include="Cpanel\assets\images\dashboard\circle.svg" />
+    <Content Include="Cpanel\assets\images\dashboard\img_1.jpg" />
+    <Content Include="Cpanel\assets\images\dashboard\img_2.jpg" />
+    <Content Include="Cpanel\assets\images\dashboard\img_3.jpg" />
+    <Content Include="Cpanel\assets\images\dashboard\img_4.jpg" />
+    <Content Include="Cpanel\assets\images\faces-clipart\pic-1.png" />
+    <Content Include="Cpanel\assets\images\faces-clipart\pic-2.png" />
+    <Content Include="Cpanel\assets\images\faces-clipart\pic-3.png" />
+    <Content Include="Cpanel\assets\images\faces-clipart\pic-4.png" />
+    <Content Include="Cpanel\assets\images\faces\face1.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face10.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face11.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face12.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face13.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face14.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face15.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face16.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face17.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face18.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face19.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face2.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face20.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face21.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face22.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face23.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face24.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face25.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face26.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face27.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face3.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face4.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face5.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face6.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face7.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face8.jpg" />
+    <Content Include="Cpanel\assets\images\faces\face9.jpg" />
+    <Content Include="Cpanel\assets\images\favicon.png" />
+    <Content Include="Cpanel\assets\images\logo-mini.svg" />
+    <Content Include="Cpanel\assets\images\logo.svg" />
+    <Content Include="Cpanel\assets\images\sprites\blue.png" />
+    <Content Include="Cpanel\assets\images\sprites\dark.png" />
+    <Content Include="Cpanel\assets\images\sprites\flag.png" />
+    <Content Include="Cpanel\assets\images\sprites\green.png" />
+    <Content Include="Cpanel\assets\images\sprites\jsgrid-icons.png" />
+    <Content Include="Cpanel\assets\images\sprites\red.png" />
+    <Content Include="Cpanel\assets\images\sprites\yellow.png" />
+    <Content Include="Cpanel\assets\js\chart.js" />
+    <Content Include="Cpanel\assets\js\dashboard.js" />
+    <Content Include="Cpanel\assets\js\file-upload.js" />
+    <Content Include="Cpanel\assets\js\hoverable-collapse.js" />
+    <Content Include="Cpanel\assets\js\misc.js" />
+    <Content Include="Cpanel\assets\js\off-canvas.js" />
+    <Content Include="Cpanel\assets\js\todo.js" />
+    <Content Include="Cpanel\assets\js\todolist.js" />
+    <Content Include="Cpanel\assets\vendors\chart.js\Chart.min.js" />
+    <Content Include="Cpanel\assets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="Cpanel\assets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="Cpanel\assets\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="Cpanel\Detalle.aspx" />
+    <Content Include="Cpanel\ListadoPaises.aspx" />
+    <Content Include="Cpanel\ListadoNotificaciones.aspx" />
+    <Content Include="Cpanel\ListadoDescuentos.aspx" />
+    <Content Include="Cpanel\ListadoLocalidades.aspx" />
+    <Content Include="Cpanel\ListadoCanjes.aspx" />
+    <Content Include="Cpanel\ListadoUsuarios.aspx" />
+    <Content Include="Cpanel\ListadoTerminos.aspx" />
+    <Content Include="Cpanel\ListadoFAQ.aspx" />
+    <Content Include="Cpanel\Comercios.aspx" />
+    <Content Include="Cpanel\Categorias.aspx" />
+    <Content Include="Cpanel\Default.aspx" />
+    <Content Include="Cpanel\gulp-tasks\inject.js" />
+    <Content Include="Cpanel\gulp-tasks\serve.js" />
+    <Content Include="Cpanel\gulp-tasks\vendors.js" />
+    <Content Include="Cpanel\gulpfile123.js" />
+    <Content Include="Cpanel\index.html" />
+    <Content Include="Cpanel\Login.aspx" />
+    <Content Include="Cpanel\pages\charts\chartjs.html" />
+    <Content Include="Cpanel\pages\forms\basic_elements.html" />
+    <Content Include="Cpanel\pages\icons\mdi.html" />
+    <Content Include="Cpanel\pages\samples\blank-page.html" />
+    <Content Include="Cpanel\pages\samples\error-404.html" />
+    <Content Include="Cpanel\pages\samples\error-500.html" />
+    <Content Include="Cpanel\pages\samples\login.html" />
+    <Content Include="Cpanel\pages\samples\register.html" />
+    <Content Include="Cpanel\pages\tables\basic-table.html" />
+    <Content Include="Cpanel\pages\ui-features\buttons.html" />
+    <Content Include="Cpanel\pages\ui-features\typography.html" />
+    <Content Include="Cpanel\partials\_footer.html" />
+    <Content Include="Cpanel\partials\_navbar.html" />
+    <Content Include="Cpanel\partials\_sidebar.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\ModelCanje.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCanje.edmx</DependentUpon>
+      <LastGenOutput>ModelCanje.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelCanje.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCanje.edmx</DependentUpon>
+      <LastGenOutput>ModelCanje.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ChatsController.cs" />
+    <Compile Include="Controllers\Chats_DetallesController.cs" />
+    <Compile Include="Controllers\deviceController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\LocalidadesController.cs" />
+    <Compile Include="Controllers\NotificacionesController.cs" />
+    <Compile Include="Controllers\NotificationPushController.cs" />
+    <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="Controllers\ParametrosController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
+    <Compile Include="Controllers\Preguntas_FrecuentesController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\TerminosController.cs" />
+    <Compile Include="Controllers\tokenController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Cpanel\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoPaises.aspx.cs">
+      <DependentUpon>ListadoPaises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoPaises.aspx.designer.cs">
+      <DependentUpon>ListadoPaises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoNotificaciones.aspx.cs">
+      <DependentUpon>ListadoNotificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoNotificaciones.aspx.designer.cs">
+      <DependentUpon>ListadoNotificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoDescuentos.aspx.cs">
+      <DependentUpon>ListadoDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoDescuentos.aspx.designer.cs">
+      <DependentUpon>ListadoDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoLocalidades.aspx.cs">
+      <DependentUpon>ListadoLocalidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoLocalidades.aspx.designer.cs">
+      <DependentUpon>ListadoLocalidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoCanjes.aspx.cs">
+      <DependentUpon>ListadoCanjes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoCanjes.aspx.designer.cs">
+      <DependentUpon>ListadoCanjes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoUsuarios.aspx.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoUsuarios.aspx.designer.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoTerminos.aspx.cs">
+      <DependentUpon>ListadoTerminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoTerminos.aspx.designer.cs">
+      <DependentUpon>ListadoTerminos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\ListadoFAQ.aspx.cs">
+      <DependentUpon>ListadoFAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\ListadoFAQ.aspx.designer.cs">
+      <DependentUpon>ListadoFAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\Comercios.aspx.cs">
+      <DependentUpon>Comercios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Comercios.aspx.designer.cs">
+      <DependentUpon>Comercios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\Clases\ApiServices.cs" />
+    <Compile Include="Cpanel\Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\Clases\ResponseServices.cs" />
+    <Compile Include="Cpanel\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cpanel\Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cpanel\Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categorias.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chats.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chats_Detalles.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoriaViewModel.cs" />
+    <Compile Include="Models\ChatsViewModel.cs" />
+    <Compile Include="Models\Despublicaciones_Tipos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FuncGrales.cs" />
+    <Compile Include="Models\CiudadesViewModel.cs" />
+    <Compile Include="Models\Paises.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioViewModel.cs" />
+    <Compile Include="Models\Localidades.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCanje.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCanje.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCanje.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelCanje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCanje.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notificaciones.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Parametros.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pedidos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pedidos_Estados.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Planes.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Preguntas_Frecuentes.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Productos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Productos_Estados.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Productos_Tipos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\PedidoViewModel.cs" />
+    <Compile Include="Models\ProductoViewModel.cs" />
+    <Compile Include="Models\Terminos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuarios_Tipos.cs">
+      <DependentUpon>ModelCanje.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Models\ModelCanje.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCanje.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelCanje.edmx.diagram">
+      <DependentUpon>ModelCanje.edmx</DependentUpon>
+    </Content>
+    <Content Include="Cpanel\assets\css\style.css.map" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Bold.eot" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Bold.woff" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Bold.woff2" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Light.eot" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Light.woff" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Light.woff2" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Medium.eot" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Medium.woff" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Medium.woff2" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Regular.eot" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Regular.woff" />
+    <Content Include="Cpanel\assets\fonts\Ubuntu\Ubuntu-Regular.woff2" />
+    <Content Include="Cpanel\assets\scss\components\_badges.scss" />
+    <Content Include="Cpanel\assets\scss\components\_bootstrap-progress.scss" />
+    <Content Include="Cpanel\assets\scss\components\_breadcrumbs.scss" />
+    <Content Include="Cpanel\assets\scss\components\_buttons.scss" />
+    <Content Include="Cpanel\assets\scss\components\_cards.scss" />
+    <Content Include="Cpanel\assets\scss\components\_checkbox-radio.scss" />
+    <Content Include="Cpanel\assets\scss\components\_dropdown.scss" />
+    <Content Include="Cpanel\assets\scss\components\_forms.scss" />
+    <Content Include="Cpanel\assets\scss\components\_icons.scss" />
+    <Content Include="Cpanel\assets\scss\components\_lists.scss" />
+    <Content Include="Cpanel\assets\scss\components\_preview.scss" />
+    <Content Include="Cpanel\assets\scss\components\_tables.scss" />
+    <Content Include="Cpanel\assets\scss\components\_todo-list.scss" />
+    <Content Include="Cpanel\assets\scss\landing-screens\_auth.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_animation.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_background.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_badges.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_blockqoute.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_breadcrumbs.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_buttons.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_cards.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_misc.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_pagination.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_popovers.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_text.scss" />
+    <Content Include="Cpanel\assets\scss\mixins\_tooltips.scss" />
+    <Content Include="Cpanel\assets\scss\style.scss" />
+    <Content Include="Cpanel\assets\scss\_dashboard.scss" />
+    <Content Include="Cpanel\assets\scss\_demo.scss" />
+    <Content Include="Cpanel\assets\scss\_fonts.scss" />
+    <Content Include="Cpanel\assets\scss\_footer.scss" />
+    <Content Include="Cpanel\assets\scss\_functions.scss" />
+    <Content Include="Cpanel\assets\scss\_layouts.scss" />
+    <Content Include="Cpanel\assets\scss\_misc.scss" />
+    <Content Include="Cpanel\assets\scss\_navbar.scss" />
+    <Content Include="Cpanel\assets\scss\_reset.scss" />
+    <Content Include="Cpanel\assets\scss\_sidebar.scss" />
+    <Content Include="Cpanel\assets\scss\_typography.scss" />
+    <Content Include="Cpanel\assets\scss\_utilities.scss" />
+    <Content Include="Cpanel\assets\scss\_variables.scss" />
+    <Content Include="Cpanel\assets\scss\_vertical-wrapper.scss" />
+    <Content Include="Cpanel\assets\scss\_widget-grid.scss" />
+    <Content Include="Cpanel\assets\vendors\js\bootstrap.min.js.map" />
+    <Content Include="Cpanel\assets\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="Cpanel\assets\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Cpanel\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Cpanel\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Cpanel\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Cpanel\Principal.Master" />
+    <None Include="Properties\PublishProfiles\MundoCanje.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\Categorias\" />
+    <Folder Include="Imagenes\Productos\" />
+    <Folder Include="Imagenes\Usuarios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51199</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51199/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
