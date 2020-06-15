@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MundoCanjeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Imagen" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Chats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario_Emisor" Type="int" />
+    <Property Name="Usuario_Receptor" Type="int" />
+    <Property Name="Fecha_Ultimo_Mensaje" Type="datetime" />
+    <Property Name="Ultimo_Mensaje" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Chats_Detalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario_Emisor" Type="int" />
+    <Property Name="Usuario_Receptor" Type="int" />
+    <Property Name="Fecha_Mensaje" Type="datetime" />
+    <Property Name="Mensaje" Type="varchar(max)" />
+    <Property Name="IdChat" Type="int" />
+  </EntityType>
+  <EntityType Name="Despublicaciones_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Localidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" />
+    <Property Name="Provincia" Type="varchar(max)" />
+    <Property Name="IdPais" Type="int" />
+  </EntityType>
+  <EntityType Name="Notificaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Prioridad" Type="int" />
+    <Property Name="Tipo" Type="varchar" MaxLength="1" />
+    <Property Name="Icono" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Parametros">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Key" Type="varchar" MaxLength="15" />
+    <Property Name="Value" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="IdPedido_Estado" Type="int" />
+    <Property Name="FechaPedido" Type="datetime" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="Comentarios" Type="varchar(max)" />
+    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ImagenMatch" Type="varchar(max)" />
+    <Property Name="ImporteDiferencia" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductoNombreMatch" Type="varchar" MaxLength="150" />
+    <Property Name="ProductoDescripcionMatch" Type="varchar(max)" />
+    <Property Name="CategoriaMatch" Type="varchar" MaxLength="50" />
+    <Property Name="IdProductoMatch" Type="int" />
+  </EntityType>
+  <EntityType Name="Pedidos_Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Planes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Preguntas_Frecuentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Pregunta" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Respuesta" Type="varchar(max)" />
+    <Property Name="Orden" Type="int" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="IdTipo" Type="int" />
+    <Property Name="IdEstado" Type="int" />
+    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Fecha_Publicacion" Type="datetime" />
+    <Property Name="TipoDespublicacion" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Imagen" Type="varchar(max)" />
+    <Property Name="Imagen2" Type="varchar(max)" />
+    <Property Name="Imagen3" Type="varchar(max)" />
+    <Property Name="Imagen4" Type="varchar(max)" />
+    <Property Name="CodigoDescuento" Type="varchar" MaxLength="10" />
+    <Property Name="lat" Type="varchar" MaxLength="20" />
+    <Property Name="lng" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Productos_Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Productos_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Terminos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="int" />
+    <Property Name="Mail" Type="varchar" MaxLength="150" />
+    <Property Name="Direccion" Type="varchar(max)" />
+    <Property Name="token" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="IdTipo" Type="int" />
+    <Property Name="Cuit" Type="varchar" MaxLength="50" />
+    <Property Name="Razon_Social" Type="varchar" MaxLength="150" />
+    <Property Name="Lat" Type="varchar(max)" />
+    <Property Name="Long" Type="varchar(max)" />
+    <Property Name="Puntuacion" Type="int" />
+    <Property Name="Imagen" Type="varchar(max)" />
+    <Property Name="IdPlan" Type="int" />
+    <Property Name="IdLocalidad" Type="int" />
+    <Property Name="Fecha_Alta" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuarios_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Chats_Detalles_Chat">
+    <End Role="Chats" Type="Self.Chats" Multiplicity="0..1" />
+    <End Role="Chats_Detalles" Type="Self.Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chats">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="IdChat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_Detalles_UsuarioEmisor">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Chats_Detalles" Type="Self.Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="Usuario_Emisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_Detalles_UsuarioReceptor">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Chats_Detalles" Type="Self.Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="Usuario_Receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_UsuarioEmisor">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="Usuario_Emisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_UsuarioReceptor">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="Usuario_Receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Localidades_ToPais">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidades">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Estados">
+    <End Role="Pedidos_Estados" Type="Self.Pedidos_Estados" Multiplicity="0..1" />
+    <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedidos_Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdPedido_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Productos">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+    <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Despublicaciones">
+    <End Role="Despublicaciones_Tipos" Type="Self.Despublicaciones_Tipos" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Despublicaciones_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="TipoDespublicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Estados">
+    <End Role="Productos_Estados" Type="Self.Productos_Estados" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos_Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_TipoProducto">
+    <End Role="Productos_Tipos" Type="Self.Productos_Tipos" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Localidades">
+    <End Role="Localidades" Type="Self.Localidades" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdLocalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Planes">
+    <End Role="Planes" Type="Self.Planes" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdPlan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Tipos">
+    <End Role="Usuarios_Tipos" Type="Self.Usuarios_Tipos" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MundoCanjeDBModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chats" EntityType="Self.Chats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chats_Detalles" EntityType="Self.Chats_Detalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Despublicaciones_Tipos" EntityType="Self.Despublicaciones_Tipos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notificaciones" EntityType="Self.Notificaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parametros" EntityType="Self.Parametros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedidos" EntityType="Self.Pedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedidos_Estados" EntityType="Self.Pedidos_Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planes" EntityType="Self.Planes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preguntas_Frecuentes" EntityType="Self.Preguntas_Frecuentes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos_Estados" EntityType="Self.Productos_Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos_Tipos" EntityType="Self.Productos_Tipos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Terminos" EntityType="Self.Terminos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios_Tipos" EntityType="Self.Usuarios_Tipos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Chats_Detalles_Chat" Association="Self.FK_Chats_Detalles_Chat">
+      <End Role="Chats" EntitySet="Chats" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_Detalles_UsuarioEmisor" Association="Self.FK_Chats_Detalles_UsuarioEmisor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_Detalles_UsuarioReceptor" Association="Self.FK_Chats_Detalles_UsuarioReceptor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_UsuarioEmisor" Association="Self.FK_Chats_UsuarioEmisor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_UsuarioReceptor" Association="Self.FK_Chats_UsuarioReceptor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Localidades_ToPais" Association="Self.FK_Localidades_ToPais">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Localidades" EntitySet="Localidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Estados" Association="Self.FK_Pedidos_Estados">
+      <End Role="Pedidos_Estados" EntitySet="Pedidos_Estados" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Productos" Association="Self.FK_Pedidos_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Usuarios" Association="Self.FK_Pedidos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Categorias" Association="Self.FK_Productos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Despublicaciones" Association="Self.FK_Productos_Despublicaciones">
+      <End Role="Despublicaciones_Tipos" EntitySet="Despublicaciones_Tipos" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Estados" Association="Self.FK_Productos_Estados">
+      <End Role="Productos_Estados" EntitySet="Productos_Estados" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_TipoProducto" Association="Self.FK_Productos_TipoProducto">
+      <End Role="Productos_Tipos" EntitySet="Productos_Tipos" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Usuarios" Association="Self.FK_Productos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Localidades" Association="Self.FK_Usuarios_Localidades">
+      <End Role="Localidades" EntitySet="Localidades" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Planes" Association="Self.FK_Usuarios_Planes">
+      <End Role="Planes" EntitySet="Planes" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Tipos" Association="Self.FK_Usuarios_Tipos">
+      <End Role="Usuarios_Tipos" EntitySet="Usuarios_Tipos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MundoCanjeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MundoCanjeDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="MundoCanjeDBModel.Categorias" />
+    <EntitySet Name="Chats" EntityType="MundoCanjeDBModel.Chats" />
+    <EntitySet Name="Chats_Detalles" EntityType="MundoCanjeDBModel.Chats_Detalles" />
+    <EntitySet Name="Despublicaciones_Tipos" EntityType="MundoCanjeDBModel.Despublicaciones_Tipos" />
+    <EntitySet Name="Notificaciones" EntityType="MundoCanjeDBModel.Notificaciones" />
+    <EntitySet Name="Pedidos" EntityType="MundoCanjeDBModel.Pedidos" />
+    <EntitySet Name="Pedidos_Estados" EntityType="MundoCanjeDBModel.Pedidos_Estados" />
+    <EntitySet Name="Productos_Estados" EntityType="MundoCanjeDBModel.Productos_Estados" />
+    <EntitySet Name="Productos_Tipos" EntityType="MundoCanjeDBModel.Productos_Tipos" />
+    <EntitySet Name="Terminos" EntityType="MundoCanjeDBModel.Terminos" />
+    <EntitySet Name="Usuarios_Tipos" EntityType="MundoCanjeDBModel.Usuarios_Tipos" />
+    <AssociationSet Name="FK_Chats_Detalles_Chat" Association="MundoCanjeDBModel.FK_Chats_Detalles_Chat">
+      <End Role="Chats" EntitySet="Chats" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Estados" Association="MundoCanjeDBModel.FK_Pedidos_Estados">
+      <End Role="Pedidos_Estados" EntitySet="Pedidos_Estados" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <EntitySet Name="Usuarios" EntityType="MundoCanjeDBModel.Usuarios" />
+    <AssociationSet Name="FK_Usuarios_Tipos" Association="MundoCanjeDBModel.FK_Usuarios_Tipos">
+      <End Role="Usuarios_Tipos" EntitySet="Usuarios_Tipos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <EntitySet Name="Preguntas_Frecuentes" EntityType="MundoCanjeDBModel.Preguntas_Frecuentes" />
+    <EntitySet Name="Planes" EntityType="MundoCanjeDBModel.Planes" />
+    <AssociationSet Name="FK_Usuarios_Planes" Association="MundoCanjeDBModel.FK_Usuarios_Planes">
+      <End Role="Planes" EntitySet="Planes" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <EntitySet Name="Localidades" EntityType="MundoCanjeDBModel.Localidades" />
+    <AssociationSet Name="FK_Usuarios_Localidades" Association="MundoCanjeDBModel.FK_Usuarios_Localidades">
+      <End Role="Localidades" EntitySet="Localidades" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <EntitySet Name="Parametros" EntityType="MundoCanjeDBModel.Parametros" />
+    <AssociationSet Name="FK_Pedidos_Usuarios" Association="MundoCanjeDBModel.FK_Pedidos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <EntitySet Name="Productos" EntityType="MundoCanjeDBModel.Productos" />
+    <AssociationSet Name="FK_Productos_Categorias" Association="MundoCanjeDBModel.FK_Productos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Despublicaciones" Association="MundoCanjeDBModel.FK_Productos_Despublicaciones">
+      <End Role="Despublicaciones_Tipos" EntitySet="Despublicaciones_Tipos" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Productos" Association="MundoCanjeDBModel.FK_Pedidos_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Estados" Association="MundoCanjeDBModel.FK_Productos_Estados">
+      <End Role="Productos_Estados" EntitySet="Productos_Estados" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_TipoProducto" Association="MundoCanjeDBModel.FK_Productos_TipoProducto">
+      <End Role="Productos_Tipos" EntitySet="Productos_Tipos" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Usuarios" Association="MundoCanjeDBModel.FK_Productos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_UsuarioReceptor" Association="MundoCanjeDBModel.FK_Chats_UsuarioReceptor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_Detalles_UsuarioEmisor" Association="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioEmisor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_Detalles_UsuarioReceptor" Association="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioReceptor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats_Detalles" EntitySet="Chats_Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chats_UsuarioEmisor" Association="MundoCanjeDBModel.FK_Chats_UsuarioEmisor">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <EntitySet Name="Paises" EntityType="MundoCanjeDBModel.Paises" />
+    <AssociationSet Name="FK_Localidades_ToPais" Association="MundoCanjeDBModel.FK_Localidades_ToPais">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Localidades" EntitySet="Localidades" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Productos_Categorias" FromRole="Categorias" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Chats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario_Emisor" Type="Int32" />
+    <Property Name="Usuario_Receptor" Type="Int32" />
+    <Property Name="Fecha_Ultimo_Mensaje" Type="DateTime" Precision="3" />
+    <Property Name="Ultimo_Mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Chats_Detalles" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_Chat" FromRole="Chats" ToRole="Chats_Detalles" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Chats_UsuarioReceptor" FromRole="Chats" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios1" Relationship="MundoCanjeDBModel.FK_Chats_UsuarioEmisor" FromRole="Chats" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Chats_Detalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario_Emisor" Type="Int32" />
+    <Property Name="Usuario_Receptor" Type="Int32" />
+    <Property Name="Fecha_Mensaje" Type="DateTime" Precision="3" />
+    <Property Name="Mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdChat" Type="Int32" />
+    <NavigationProperty Name="Chats" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_Chat" FromRole="Chats_Detalles" ToRole="Chats" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioEmisor" FromRole="Chats_Detalles" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios1" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioReceptor" FromRole="Chats_Detalles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Despublicaciones_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Productos_Despublicaciones" FromRole="Despublicaciones_Tipos" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Notificaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Prioridad" Type="Int32" />
+    <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Icono" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <Property Name="IdPedido_Estado" Type="Int32" />
+    <Property Name="FechaPedido" Type="DateTime" Precision="3" />
+    <Property Name="FechaEntrega" Type="DateTime" Precision="3" />
+    <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Pedidos_Estados" Relationship="MundoCanjeDBModel.FK_Pedidos_Estados" FromRole="Pedidos" ToRole="Pedidos_Estados" />
+    <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Pedidos_Usuarios" FromRole="Pedidos" ToRole="Usuarios" />
+    <Property Name="ImagenMatch" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImporteDiferencia" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProductoNombreMatch" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ProductoDescripcionMatch" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoriaMatch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Pedidos_Productos" FromRole="Pedidos" ToRole="Productos" />
+    <Property Name="IdProductoMatch" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Pedidos_Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Pedidos" Relationship="MundoCanjeDBModel.FK_Pedidos_Estados" FromRole="Pedidos_Estados" ToRole="Pedidos" />
+  </EntityType>
+  <EntityType Name="Productos_Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Productos_Estados" FromRole="Productos_Estados" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Productos_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Productos_TipoProducto" FromRole="Productos_Tipos" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Terminos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuarios_Tipos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Usuarios_Tipos" FromRole="Usuarios_Tipos" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_Chats_Detalles_Chat">
+    <End Type="MundoCanjeDBModel.Chats" Role="Chats" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Chats_Detalles" Role="Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chats">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="IdChat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Estados">
+    <End Type="MundoCanjeDBModel.Pedidos_Estados" Role="Pedidos_Estados" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Pedidos" Role="Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedidos_Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdPedido_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" />
+    <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="IdTipo" Type="Int32" />
+    <Property Name="Cuit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Razon_Social" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Long" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Puntuacion" Type="Int32" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuarios_Tipos" Relationship="MundoCanjeDBModel.FK_Usuarios_Tipos" FromRole="Usuarios" ToRole="Usuarios_Tipos" />
+    <Property Name="IdPlan" Type="Int32" />
+    <NavigationProperty Name="Planes" Relationship="MundoCanjeDBModel.FK_Usuarios_Planes" FromRole="Usuarios" ToRole="Planes" />
+    <Property Name="IdLocalidad" Type="Int32" />
+    <NavigationProperty Name="Localidades" Relationship="MundoCanjeDBModel.FK_Usuarios_Localidades" FromRole="Usuarios" ToRole="Localidades" />
+    <NavigationProperty Name="Pedidos" Relationship="MundoCanjeDBModel.FK_Pedidos_Usuarios" FromRole="Usuarios" ToRole="Pedidos" />
+    <Property Name="Fecha_Alta" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Productos" Relationship="MundoCanjeDBModel.FK_Productos_Usuarios" FromRole="Usuarios" ToRole="Productos" />
+    <NavigationProperty Name="Chats" Relationship="MundoCanjeDBModel.FK_Chats_UsuarioReceptor" FromRole="Usuarios" ToRole="Chats" />
+    <NavigationProperty Name="Chats_Detalles" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioEmisor" FromRole="Usuarios" ToRole="Chats_Detalles" />
+    <NavigationProperty Name="Chats_Detalles1" Relationship="MundoCanjeDBModel.FK_Chats_Detalles_UsuarioReceptor" FromRole="Usuarios" ToRole="Chats_Detalles" />
+    <NavigationProperty Name="Chats1" Relationship="MundoCanjeDBModel.FK_Chats_UsuarioEmisor" FromRole="Usuarios" ToRole="Chats" />
+  </EntityType>
+  <Association Name="FK_Usuarios_Tipos">
+    <End Type="MundoCanjeDBModel.Usuarios_Tipos" Role="Usuarios_Tipos" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Preguntas_Frecuentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Pregunta" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Planes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Usuarios_Planes" FromRole="Planes" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_Usuarios_Planes">
+    <End Type="MundoCanjeDBModel.Planes" Role="Planes" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdPlan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Localidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Provincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Usuarios_Localidades" FromRole="Localidades" ToRole="Usuarios" />
+    <Property Name="IdPais" Type="Int32" />
+    <NavigationProperty Name="Paises" Relationship="MundoCanjeDBModel.FK_Localidades_ToPais" FromRole="Localidades" ToRole="Paises" />
+  </EntityType>
+  <Association Name="FK_Usuarios_Localidades">
+    <End Type="MundoCanjeDBModel.Localidades" Role="Localidades" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdLocalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Parametros">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Pedidos_Usuarios">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Pedidos" Role="Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipo" Type="Int32" />
+    <Property Name="IdEstado" Type="Int32" />
+    <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Fecha_Publicacion" Type="DateTime" Precision="3" />
+    <Property Name="TipoDespublicacion" Type="Int32" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoDescuento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="lat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lng" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Categorias" Relationship="MundoCanjeDBModel.FK_Productos_Categorias" FromRole="Productos" ToRole="Categorias" />
+    <NavigationProperty Name="Despublicaciones_Tipos" Relationship="MundoCanjeDBModel.FK_Productos_Despublicaciones" FromRole="Productos" ToRole="Despublicaciones_Tipos" />
+    <NavigationProperty Name="Pedidos" Relationship="MundoCanjeDBModel.FK_Pedidos_Productos" FromRole="Productos" ToRole="Pedidos" />
+    <NavigationProperty Name="Productos_Estados" Relationship="MundoCanjeDBModel.FK_Productos_Estados" FromRole="Productos" ToRole="Productos_Estados" />
+    <NavigationProperty Name="Productos_Tipos" Relationship="MundoCanjeDBModel.FK_Productos_TipoProducto" FromRole="Productos" ToRole="Productos_Tipos" />
+    <NavigationProperty Name="Usuarios" Relationship="MundoCanjeDBModel.FK_Productos_Usuarios" FromRole="Productos" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_Productos_Categorias">
+    <End Type="MundoCanjeDBModel.Categorias" Role="Categorias" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Despublicaciones">
+    <End Type="MundoCanjeDBModel.Despublicaciones_Tipos" Role="Despublicaciones_Tipos" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Despublicaciones_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="TipoDespublicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Productos">
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Pedidos" Role="Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Estados">
+    <End Type="MundoCanjeDBModel.Productos_Estados" Role="Productos_Estados" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos_Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_TipoProducto">
+    <End Type="MundoCanjeDBModel.Productos_Tipos" Role="Productos_Tipos" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos_Tipos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Usuarios">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_UsuarioReceptor">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Chats" Role="Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="Usuario_Receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_Detalles_UsuarioEmisor">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Chats_Detalles" Role="Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="Usuario_Emisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_Detalles_UsuarioReceptor">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Chats_Detalles" Role="Chats_Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats_Detalles">
+        <PropertyRef Name="Usuario_Receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chats_UsuarioEmisor">
+    <End Type="MundoCanjeDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Chats" Role="Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="Usuario_Emisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Localidades" Relationship="MundoCanjeDBModel.FK_Localidades_ToPais" FromRole="Paises" ToRole="Localidades" />
+  </EntityType>
+  <Association Name="FK_Localidades_ToPais">
+    <End Type="MundoCanjeDBModel.Paises" Role="Paises" Multiplicity="0..1" />
+    <End Type="MundoCanjeDBModel.Localidades" Role="Localidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidades">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
